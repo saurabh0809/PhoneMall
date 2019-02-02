@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -12,12 +13,15 @@ class App extends Component {
   render() {
     return (
       // to avoid section or div tags, we used React.Fragment
+      // switch to display navbar on each page and route it to all pages
       <React.Fragment>
         <Navbar />
-        <ProductList />
-        <Details />
-        <Cart />
-        <Default />
+        <Switch>
+          <Route exact path="/" component={ProductList} />
+          <Route path="/Details" component={Details} />
+          <Route path="/Cart" component={Cart} />
+          <Route component={Default} />
+        </Switch>
       </React.Fragment>
     );
   }
