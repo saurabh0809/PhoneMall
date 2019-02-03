@@ -6,12 +6,13 @@ import { ProductConsumer } from "../Context";
 
 export default class ProductList extends Component {
   // getting state of products from data.js
+  /*
   state = {
     products: storeProducts
-  };
+  }; */
 
   render() {
-    console.log(this.state.products);
+    //console.log(this.state.products);
 
     return (
       <React.Fragment>
